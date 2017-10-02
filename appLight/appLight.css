@@ -1,0 +1,29 @@
+.container{
+	margin:auto;
+	margin-top:20%;
+	border-style:solid;
+	border-color: gray;
+	height:120px;
+	width:240px;
+}
+
+#left{
+	float:left;
+	background-color:black;
+	width:120px;
+	height:120px;
+}
+
+#right{
+	float:right;
+	background-color:white;
+	width:120px;
+	height:120px;
+}
+
+#title {
+	text-align: center;
+}
+
+	
+	
