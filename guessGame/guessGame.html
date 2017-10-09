@@ -11,12 +11,12 @@
 		<div class="panel">
 			<h2>Welcome to the Guessing Game by Kevin Booth</h2>
 			<button onclick="newGame()">NEW GAME</button><br><br><hr>
-			<label>Player  1: Enter a number for Player 2 to guess and press enter!</label>
+			<span>Player  1: Enter a number for Player 2 to guess and press enter!</span>
 			<input id="num1" onchange="initiateNumber()" type="number" placeholder="Enter your number">
 		</div>
 		
 		<div class="panel">
-			<label>Player 2: Guess Player 1's number and press enter!</label>
+			<span>Player 2: Guess Player 1's number and press enter!</span>
 			<input id="num2" onchange="evaluateGuess()" type="number" placeholder="Guess the number">
 			</p>Number of previous attempts: <span id="attempts"></span>
 			<span id="response"><br>Start Guessing!<span>
