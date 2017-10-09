@@ -6,14 +6,14 @@ function newGame(){
 }
 
 function initiateNumber(){
-	var winningNumber = document.getElementById('num1').value;
+	var winningNumber = parseInt(document.getElementById('num1').value);
 	document.getElementById('num1').style.display = 'none';
 }
 
 function evaluateGuess(){
-	var winningNumber = document.getElementById('num1').value;
+	var winningNumber = parseInt(document.getElementById('num1').value);
 	console.log(winningNumber);
-	var numGuess = document.getElementById('num2').value;
+	var numGuess = parseInt(document.getElementById('num2').value);
 	console.log(numGuess);
 	
 	numGuessLog.push(" " + numGuess);
