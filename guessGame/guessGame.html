@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guessing Game</title>
+	<link rel="stylesheet" type="text/css" href="guessGame.css">
+	<script src="guessGame.js"></script>
+</head>
+<body>
+	<div class="mydiv">
+		<div class="panel">
+			<h2>Welcome to the Guessing Game by Kevin Booth</h2>
+			<button onclick="newGame()">NEW GAME</button><br><br><hr>
+			<label>Player  1: Enter a number and press enter!</label>
+			<input id="num1" onchange="initiateNumber()" type="number" placeholder="Enter your number">
+		</div>
+		
+		<div class="panel">
+			<label>Player 2: Guess a number and press enter!</label>
+			<input id="num2" onchange="evaluateGuess()" type="number" placeholder="Guess the number">
+			</p>Number of previous attempts: <span id="attempts"></span>
+			<span id="response"><br>Start Guessing!<span>
+		</div>
+		
+		<div class = "panel">
+			<p>Your previous guesses: 
+			<p id="guessLog"></p>
+			</p>
+		</div>
+	</div>
+</body>
+</html>
