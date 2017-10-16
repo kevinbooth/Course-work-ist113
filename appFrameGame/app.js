@@ -61,5 +61,7 @@ function MyApp()
 */
 $(function() {
 	window.app = new MyApp();
+	window.app.initiateGuess();
+	window.app.evaluateGuess();
 	window.app.start();
 });
