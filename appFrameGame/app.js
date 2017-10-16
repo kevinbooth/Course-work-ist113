@@ -68,4 +68,5 @@ function MyApp()
 $(function() {
 	window.app = new MyApp();
 	window.app.start();
+	window.app.newGame();
 });
