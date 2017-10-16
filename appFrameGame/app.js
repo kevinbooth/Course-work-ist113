@@ -3,7 +3,7 @@
 // using a function contructor form to create an object
 function MyApp()
 {
-	this.neww = function(){
+	neww = function(){
 	window.location.reload();
 	}
 
