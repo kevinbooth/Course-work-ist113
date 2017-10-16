@@ -1,8 +1,8 @@
 "use strict";
 
 // using a function contructor form to create an object
-function MyApp()
-{
+function TaskAtHandApp()
+{	
 	var version = "v1.0";
 
 	// creating a private function
@@ -10,10 +10,34 @@ function MyApp()
 	{
 		$("#app>footer").text(message);
 	}
+	
+	function addTask(){
+		var taskName = $("#new-task-name").val();
+		if (taskName) 
+		{
+			addTaskElement(taskName);
+			//Reset the text field
+			$("new-task-name").val("").focus();
+		}
+	}
+	function addTaskElement(taskName) {
+		var $task = $("<li></li>");
+		$task.text(taskName);
+		$("#task-list").append($task);
+	}
 
 	// creating a public function
 	this.start = function()
 	{
+		$("#new-task-name").keypress(function(e) {
+			if (e.which == 13) //Enter key 
+			{
+				addTask();
+				return false;
+			}
+		})
+		.focus();
+		
 		$("#app>header").append(version);
 		setStatus("ready");
 	};
@@ -27,6 +51,6 @@ function MyApp()
 		(part of the BOM - Browser Object Model)
 */
 $(function() {
-	window.app = new MyApp();
+	window.app = new TaskAtHandApp();
 	window.app.start();
 });
