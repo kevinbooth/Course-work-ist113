@@ -7,6 +7,9 @@ function MyApp()
 	window.location.reload();
 	}
 
+	var numGuessLog = [];
+	var attemptCounter = 0;
+
 	function initiateNumber(){
 		var winningNumber = parseInt(document.getElementById('num1').value);
 		document.getElementById('num1').style.display = 'none';
