@@ -52,9 +52,9 @@ function MyApp()
 	{
 		$("#app>header").append(version);
 		setStatus("ready");
-		newGame();
-		initiateNumber();
-		evaluateGuess();
+		$('button').on('click', function {
+			newGame();
+		});
 	};
 } // end MyApp
 
@@ -68,5 +68,4 @@ function MyApp()
 $(function() {
 	window.app = new MyApp();
 	window.app.start();
-	window.app.newGame();
 });
