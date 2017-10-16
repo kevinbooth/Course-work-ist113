@@ -3,7 +3,7 @@
 // using a function contructor form to create an object
 function MyApp()
 {
-	function newGame(){
+	this.neww = function(){
 	window.location.reload();
 	}
 
@@ -64,6 +64,6 @@ function MyApp()
 */
 $(function() {
 	window.app = new MyApp();
-	window.app.newGame();
+	window.app.neww();
 	window.app.start();
 });
