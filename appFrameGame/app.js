@@ -55,10 +55,10 @@ function MyApp()
 		$("button").on('click', function () {
 			newGame();
 		});
-		$("num1").on('change', function(){
+		$("num1").change(function(){
 			initiateNumber();
 		});
-		$("num2").on('change', function(){
+		$("num2").change(function(){
 			evaluateGuess();
 		});
 	};
