@@ -3,7 +3,7 @@
 // using a function contructor form to create an object
 function MyApp()
 {
-	neww = function(){
+	function newGame(){
 	window.location.reload();
 	}
 
@@ -52,6 +52,8 @@ function MyApp()
 	{
 		$("#app>header").append(version);
 		setStatus("ready");
+		newGame();
+		
 	};
 } // end MyApp
 
@@ -64,6 +66,5 @@ function MyApp()
 */
 $(function() {
 	window.app = new MyApp();
-	window.app.neww();
 	window.app.start();
 });
