@@ -53,7 +53,8 @@ function MyApp()
 		$("#app>header").append(version);
 		setStatus("ready");
 		newGame();
-		
+		initiateNumber();
+		evaluateGuess();
 	};
 } // end MyApp
 
