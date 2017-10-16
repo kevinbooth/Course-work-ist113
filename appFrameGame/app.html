@@ -3,12 +3,13 @@
 	<head>
 		<title>App</title>
 		<link href="app.css" rel="StyleSheet" />
-		<link rel="icon" href="gg_icon.png">
 		<script src="lib/jquery-3.2.1.min.js"></script>
 		<script src="app.js"></script>
 	</head>
 	<body>
-		<div class="mydiv">
+		<div id="app">
+			<header>App</header>
+			<div id="main">
 			<div class="panel">
 				<h2>Welcome to the Guessing Game by Kevin Booth</h2>
 				<button onclick="newGame()">NEW GAME</button><br><br><hr>
@@ -28,6 +29,9 @@
 				<span id="guessLog"></span>
 				</p>
 			</div>
+				
+			</div>
+			<footer></footer>
 		</div>
 	</body>
 </html>

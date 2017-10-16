@@ -1,4 +1,51 @@
 body {
+	font: 1em Verdana, Geneva, sans-serif;
+	padding: 0;
+	margin: 5px;
+	color: Black;
+	background-color: WhiteSmoke;
+}
+div {
+	padding: 0;
+	margin: 0;
+}
+button {
+	cursor: pointer;
+}
+.hidden {
+	display: none;
+}
+
+/**************/
+/*    App     */
+/**************/
+
+#app {
+	margin: 4px;
+	background-color: #bbc;
+}
+#app>header {
+	padding: 0 0.5em;
+	font-size: 1.5em;
+	color: WhiteSmoke;
+	background-color: #006;
+}
+#app>footer {
+	padding: 0.25em;
+	color: WhiteSmoke;
+	background-color: #006;
+}
+#main {
+	margin: 1em;
+	background-color: #52658f;
+	max-width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 12px;
+	padding: 12px;
+}
+
+body {
 	background: url('gradient.jpg') no-repeat fixed;
 	background-size: cover;
 }
@@ -35,3 +82,4 @@ input {
 	height: 3em;
 	text-align: center;
 }
+
