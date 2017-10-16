@@ -52,9 +52,6 @@ function MyApp()
 	{
 		$("#app>header").append(version);
 		setStatus("ready");
-		$('button').on('click', function {
-			newGame();
-		});
 	};
 } // end MyApp
 
