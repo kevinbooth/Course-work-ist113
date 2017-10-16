@@ -1,0 +1,37 @@
+body {
+	background: url('gradient.jpg') no-repeat fixed;
+	background-size: cover;
+}
+
+.mydiv {
+	background-color: #52658f;
+	max-width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 12px;
+	padding: 12px;
+}
+
+.panel {
+	max-width: 80%;
+	margin: 20px auto;
+	border-radius: 12px;
+	padding: 12px;
+	background-color: #eee;
+}
+
+button {
+	background: #52658f;
+	height: 3em;
+	width: 80%;
+	border-radius: 12px;
+	color: white;
+	font-size: 0.9em;
+}
+
+input {
+	border-radius: 12px;
+	width: 80%;
+	height: 3em;
+	text-align: center;
+}

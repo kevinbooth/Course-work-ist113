@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>App</title>
+		<link href="app.css" rel="StyleSheet" />
+		<link rel="icon" href="gg_icon.png">
+		<script src="lib/jquery-3.2.1.min.js"></script>
+		<script src="app.js"></script>
+	</head>
+	<body>
+		<div class="mydiv">
+			<div class="panel">
+				<h2>Welcome to the Guessing Game by Kevin Booth</h2>
+				<button onclick="newGame()">NEW GAME</button><br><br><hr>
+				<span>Player  1: Enter a number for Player 2 to guess and press enter!</span>
+				<input id="num1" onchange="initiateNumber()" type="number" placeholder="Enter your number">
+			</div>
+			
+			<div class="panel">
+				<span>Player 2: Guess Player 1's number and press enter!</span>
+				<input id="num2" onchange="evaluateGuess()" type="number" placeholder="Guess the number">
+				</p>Number of previous attempts: <span id="attempts"></span>
+				<span id="response"><br>Start Guessing!<span>
+			</div>
+			
+			<div class = "panel">
+				<p>Your previous guesses: 
+				<span id="guessLog"></span>
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
