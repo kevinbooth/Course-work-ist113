@@ -26,7 +26,7 @@ function TaskAtHandApp()
 		{
 			addTaskElement(taskName);
 			//Reset the text field
-			$("new-task-name").val("").focus();
+			$("#new-task-name").val("").focus();
 		}
 		saveTaskList();
 	}
