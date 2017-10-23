@@ -14,6 +14,20 @@ function TaskAtHandApp()
 		appStorage.setValue("taskList", tasks);
 	}
 
+	function saveTaskListBackup() {
+		var tasksBackup = [];
+		$("#task-list .task span.task-name").each(function() {
+			tasksBackup.push($(this).text())
+		});
+		appStorage.setValue("taskListBack", tasksBackup);
+		appStorage.setValue("taskList", tasksBackup);
+	}
+
+	function onClickUndo() {
+		appStorage.setValue("taskList", appStorage.getValue("taskListBack"));
+		window.location.reload();
+	}
+
 	// creating a private function
 	function setStatus(message)
 	{
@@ -22,6 +36,7 @@ function TaskAtHandApp()
 
 	function addTask(){
 		var taskName = $("#new-task-name").val();
+		saveTaskListBackup();
 		if (taskName)
 		{
 			addTaskElement(taskName);
@@ -35,6 +50,11 @@ function TaskAtHandApp()
 		$("span.task-name", $task).text(taskName);
 
 		$("#task-list").append($task);
+
+		$("button.undo").click(function() {
+			//removeAll($task);
+			onClickUndo();
+		});
 
 		$("button.delete", $task).click(function() {
 			removeTask($task);
