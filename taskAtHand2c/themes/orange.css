@@ -1,13 +1,13 @@
 #app
 {
-   background-color: ##ffcc99;
-   background: -webkit-linear-gradient(top, ##ffcc99, #ff6600);
-   background: -moz-linear-gradient(top, ##ffcc99, #ff6600);
-   background: -ms-linear-gradient(top, ##ffcc99, #ff6600);
-   background: linear-gradient(top, ##ffcc99, #ff6600);
+   background-color: #cbc;
+   background: -webkit-linear-gradient(top, #cbc, #858);
+   background: -moz-linear-gradient(top, #cbc, #858);
+   background: -ms-linear-gradient(top, #cbc, #858);
+   background: linear-gradient(top, #cbc, #858);
 }
 #app>header,
 #app>footer
 {
-   background-color: #ff6600;
+   background-color: #606;
 }
