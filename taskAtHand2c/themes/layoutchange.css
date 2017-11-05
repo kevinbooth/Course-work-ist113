@@ -1,0 +1,32 @@
+#app
+{
+   background-image: url("../images/background.jpg");
+   background-repeat: repeat-x;
+}
+
+#label-add {
+  font-weight: bold;
+  text-align: center;
+}
+
+#main {
+	max-width: 35em;
+	min-width: 15em;
+	margin: 1em auto;
+  padding-right: 3em;
+  padding-bottom: 3em;
+  padding-top: 3em;
+  border-radius: 15px;
+  background-image: url("../images/main-back.jpg");
+  box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.6);
+}
+
+#task-list .task {
+  background-color: #ccddff;
+}
+
+#app>header,
+#app>footer
+{
+   background-color: black;
+}
