@@ -1,13 +1,13 @@
 #app
 {
-   background-color: #cbc;
-   background: -webkit-linear-gradient(top, #cbc, #858);
-   background: -moz-linear-gradient(top, #cbc, #858);
-   background: -ms-linear-gradient(top, #cbc, #858);
-   background: linear-gradient(top, #cbc, #858);
+   background-color: #ffd1b3;
+   background: -webkit-linear-gradient(top, #ffd1b3, #ff751a);
+   background: -moz-linear-gradient(top, #ffd1b3, #ff751a);
+   background: -ms-linear-gradient(top, #ffd1b3, #ff751a);
+   background: linear-gradient(top, #ffd1b3, #ff751a);
 }
 #app>header,
 #app>footer
 {
-   background-color: #606;
+   background-color: #e65c00;
 }
