@@ -3,7 +3,7 @@
 // using a function contructor form to create an object
 function TaskAtHandApp()
 {
-	var version = "v2.2",
+	var version = "v3.1",
 		appStorage = new AppStorage("taskAtHand");
 
 	function saveTaskList() {
