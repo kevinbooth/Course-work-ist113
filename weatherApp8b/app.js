@@ -3,12 +3,31 @@
 // using a function contructor form to create an object
 function MyApp()
 {
-	var version = "v1.0";
+	var version = "v1.2";
 
 	// creating a private function
 	function setStatus(message)
 	{
 		$("#app>footer").text(message);
+	}
+	
+	function getLocation()
+	{
+		if (navigator.geolocation)
+		{
+			navigator.geolocation.getCurrentPosition(
+			function(position)
+			{
+				$("#latitude").val(position.coords.latitude);
+				$("#longitude").val(position.coords.longitude);
+			},
+			function(error)
+			{
+				$("#controls .error")
+					.text("ERROR: " + error.message)
+					.slideDown();
+			});
+		}
 	}
 
 	// creating a public function
@@ -22,6 +41,7 @@ function MyApp()
 		
 		$("#getWeather").on("click", function() {
 			weatherWidget.update();
+			getLocation();
 		});
 	};
 } // end MyApp
