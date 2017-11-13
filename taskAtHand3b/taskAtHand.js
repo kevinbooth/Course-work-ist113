@@ -21,13 +21,6 @@ function TaskAtHandApp()
 		2000);
 	}
 	
-	function loadTaskList()
-	{
-		var tasks = appStorage.getValue("taskList");
-		taskList = new TaskList(tasks);
-		rebuildTaskList();
-	}
-	
 	function setStatus(msg, noFade)
 	{
 		$("#app>footer").text(msg).show();
@@ -36,24 +29,13 @@ function TaskAtHandApp()
 			$("#app>footer").fadeOut(1000);
 		}
 	}
-
-	this.start = function()
+	
+	function loadTaskList()
 	{
-		$("#new-task-name").keypress(function(e) {
-			if (e.which == 13) //Checks that enter key was pressed
-			{
-				addTask();
-				return false;
-			}
-		})
-		.focus();
-		
-		$("#app>header").append(version);
-		loadTaskList();
-		setStatus("ready");
-		$("#theme").change(onChangeTheme);
-		loadTheme();
-	};
+		var tasks = appStorage.getValue("taskList");
+		taskList = new TaskList(tasks);
+		rebuildTaskList();
+	}
 	
 	function addTask()
 	{
@@ -220,6 +202,25 @@ function TaskAtHandApp()
 			addTaskElement(task);
 		});
 	}
+	
+	
+	this.start = function()
+	{
+		$("#new-task-name").keypress(function(e) {
+			if (e.which == 13) //Checks that enter key was pressed
+			{
+				addTask();
+				return false;
+			}
+		})
+		.focus();
+		
+		$("#app>header").append(version);
+		loadTaskList();
+		setStatus("ready");
+		$("#theme").change(onChangeTheme);
+		loadTheme();
+	};
 	
 } // end MyApp
 
