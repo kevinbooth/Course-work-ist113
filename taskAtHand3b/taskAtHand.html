@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,18 +14,18 @@
 		<div id="app">
 			<header>Task@Hand</header>
 			<div id="toolbar">
-					<label for="theme">Theme</label>
-					<select id="theme" title="Select theme">
-							<option value="blue">Blue</option>
-							<option value="green">Green</option>
-							<option value="magenta">Magenta</option>
-							<option value="red">Red</option>
-					</select>
+				<label for="theme">Theme</label>
+				<select id="theme" title="Select theme">
+					<option value="blue">Blue</option>
+					<option value="green">Green</option>
+					<option value="magenta">Magenta</option>
+					<option value="red">Red</option>
+				</select>
 			</div>
 			<div id="main">
 				<div id="add-task">
-					<label for="new-task-name">Add a task</label></br>
-					<input type="text" id="new-task-name" title="enter a task name" placeholder="Enter a task name"/>
+					<label for="new-task-name">Add a task</label>
+					<input type="text" id="new-task-name" title="Enter a task name" placeholder="Enter a task name"/>
 				</div>
 				<ul id="task-list">
 				</ul>
@@ -34,7 +35,7 @@
 		<div id="templates" class="hidden">
 			<ul id="task-template">
 				<li class="task">
-					<button class="toggle-details"></button>
+					<button class="toggle-details">+</button>
 					<span class="task-name"></span>
 					<input type="text" class="task-name hidden"/>
 					<div class="tools">
@@ -43,24 +44,29 @@
 						<button class="move-down" title="Down">v</button>
 					</div>
 					<div class="details">
-					 <label>Start date:</label>
-					 <input type="date" data-field="startDate"/><br/>
-					 <label>Due date:</label>
-					 <input type="date" data-field="dueDate"/><br/>
-					 <label>Status:</label>
-					 <select data-field="status">
-					 	//— options removed... -->
-					 </select><br/>
-					 <label>Priority:</label>
-					 <select data-field="priority">
-					 	//— options removed... -->
-					 </select><br/>
-					 <label>%&nbsp;Complete:</label>
-					 <input type="number" data-field="pctComplete"
-					 min="0" max="100" step="10" value="0"/>
+						<label>Start date:</label>
+						<input type="date" data-field="startDate"/><br/>
+						<label>Due date:</label>
+						<input type="date" data-field="dueDate"/><br/>
+						<label>Status:</label>
+						<select data-field="status">
+							<option value="0">None</option>
+							<option value="1">Not Started</option>
+							<option value="2">Started</option>
+							<option value="3">Completed</option>
+						</select><br/>
+						<label>Priority:</label>
+						<select data-field="priority">
+							<option value="0">None</option>
+							<option value="1">Low</option>
+							<option value="2">Normal</option>
+							<option value="3">High</option>
+						</select><br/>
+						<label>%&nbsp;Complete:</label>
+						<input type="number" data-field="pctComplete" min="0" max="100" step="10" value="0"/>
 					</div>
 				</li>
 			</ul>
-		</div>
+		</div>		
 	</body>
 </html>
