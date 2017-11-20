@@ -46,6 +46,7 @@ function JeopardyApp() {
     appendFooter("Jeopardy Game Version 1");
     $("#getquest").click(function() {
     getData();
+    $("#input").val("");
     });
     $("#submit").click(function() {
       $("#answer").show();
