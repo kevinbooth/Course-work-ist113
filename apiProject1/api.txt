@@ -1,0 +1,16 @@
+{"id":131312,
+"answer":"Elizabeth I",
+"question":"No kids, 
+big problem: she was the last Tudor monarch",
+"value":400,"airdate":"2014-10-09T12:00:00.000Z",
+"created_at":"2015-01-18T18:18:06.933Z",
+"updated_at":"2015-01-18T18:18:06.933Z",
+"category_id":11195,
+"game_id":null,
+"invalid_count":null,
+"category":{
+	"id":11195,
+	"title":"dynasty",
+	"created_at":"2014-02-11T23:43:03.345Z",
+	"updated_at":"2014-02-11T23:43:03.345Z",
+	"clues_count":15}}
