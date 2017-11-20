@@ -40,7 +40,7 @@ function WeatherWidget($widget)
 		 //var observation = data.current_observation;
 
 		 $(".results header img", $widget).attr("src",
-		 data.properties.periods[10].icon);
+		 data.properties.periods[1].icon);
 		 $(".location>span", $widget).text(data.properties.periods[1].name);
 		 $("#cond", $widget).text(data.properties.periods[1].shortForecast);
 		 $("#temp", $widget).text(data.properties.periods[1].temperature);
