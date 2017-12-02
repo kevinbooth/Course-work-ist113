@@ -48,14 +48,18 @@
         <div class="winnerout"></div>
         <strong>Question:</strong><p id="question"></p>
         <p><strong>Answer the question:</strong></p>
-        <input id="input" type="text"/></br></br>
+        <form id="radio-demo">
+          <input type="radio" name="radio-group" id="first-choice" value="First Choice" />
+          <label id="one" for="first-choice"></label>
+          <br/>
+          <input type="radio" name="radio-group" id="second-choice" value="Second Choice" />
+          <label id="two" for="second-choice"></label>
+          <br/>
+          <input type="radio" name="radio-group" id="third-choice" value="Third Choice" />
+          <label id="three" for="third-choice"></label>
+        </form>
         <button id="submit">Submit</button><br/><br/>
         <strong>The answer is:</strong><p id="answer"></p>
-        <div id="hidden">
-          <p id="corr"><strong>Did you get the answer correct?</strong></p>
-          <button id="yes">YES</button>
-          <button id="no">NO</button><br/>
-        </div>
         <strong>Score: </strong><span id="score">0</span><br/><br/>
         <span>Error output:</span>
         <footer></footer>

@@ -15,18 +15,47 @@ function JeopardyApp() {
       type: "GET",
       url: "http://jservice.io/api/random",
       dataType: "json"
+      })
+      .done(function(data) { appendData(data); })
+      .fail(function(jqXHR, textStatus, errorThrown) {
+  					showError(errorThrown);
+      });
+
+    $.ajax({
+     type: "GET",
+     url: "http://jservice.io/api/random",
+     dataType: "json"
+     })
+     .done(function(wrong1) { appendData(wrong1); })
+     .fail(function(jqXHR, textStatus, errorThrown) {
+           showError(errorThrown);
+     });
+
+   $.ajax({
+    type: "GET",
+    url: "http://jservice.io/api/random",
+    dataType: "json"
     })
-    .done(function(data) { appendData(data); })
+    .done(function(wrong2) { appendData(wrong2); })
     .fail(function(jqXHR, textStatus, errorThrown) {
-					showError(errorThrown);
+          showError(errorThrown);
     });
   }
 
   function appendData(data) {
+      var labels = ["#one", "#two", "#three"];
       $(".titles").text(data[0].category.title);
       $(".diffi").text(data[0].value);
       $("#question").text(data[0].question);
+      //randomly placing answer in HTML
+      var randomIndex = Math.floor(Math.random() * 3);
+      
+
       $("#answer").text(data[0].answer).hide();
+  }
+
+  function appendWrongs(wrong) {
+
   }
 
   function appendFooter(message) {
