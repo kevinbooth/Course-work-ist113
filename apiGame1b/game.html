@@ -7,7 +7,7 @@
     <script src="game.js"></script>
   </head>
   <body>
-    <header id="heading"><strong>Welcome To The Game of Jeopardy!</strong></header><br/>
+    <header id="heading"><img src="images/jeopardy_logo.png" alt="Jeopardy"></header><br/>
     <div id="a">
       <div id="sidebar">
         <div id="sidebar1">
@@ -50,17 +50,16 @@
         <p><strong>Answer the question:</strong></p>
         <form id="radio-demo">
           <input type="radio" name="radio-group" id="first-choice" value="First Choice" />
-          <label id="one" for="first-choice"></label>
+          <label id="1" for="first-choice"></label>
           <br/>
           <input type="radio" name="radio-group" id="second-choice" value="Second Choice" />
-          <label id="two" for="second-choice"></label>
+          <label id="2" for="second-choice"></label>
           <br/>
           <input type="radio" name="radio-group" id="third-choice" value="Third Choice" />
-          <label id="three" for="third-choice"></label>
-        </form>
+          <label id="3" for="third-choice"></label>
+        </form><br/>
         <button id="submit">Submit</button><br/><br/>
         <strong>The answer is:</strong><p id="answer"></p>
-        <strong>Score: </strong><span id="score">0</span><br/><br/>
         <span>Error output:</span>
         <footer></footer>
       </div>

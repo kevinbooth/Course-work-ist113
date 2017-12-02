@@ -1,7 +1,19 @@
+html{
+  height: 100%;
+}
+
 body {
   font-family: verdana;
   font-size: 20px;
-  background-color: #eaeaec;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  background-color: #cfd6d6;
+  background: -webkit-linear-gradient(#cfd6d6 , #a0bbbc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#cfd6d6, #a0bbbc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#cfd6d6, #a0bbbc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#cfd6d6 , #a0bbbc); /* Standard syntax */
   color: white;
 }
 
@@ -17,18 +29,28 @@ body {
 #sidebar1 {
   height: 250px;
   width: 200px;
-  background-color: #00C5CD;
+  background-color: #7fa3a5;
   border-radius: 10px;
   box-shadow: 2px 2px 2px #888888;
+}
+
+#sidebar1:hover {
+  background-color: #008B91;
+  color: white;
 }
 
 #sidebar2 {
   height: 250px;
   width: 200px;
   margin-top: 10px;
-  background-color: #00C5CD;
+  background-color: #7fa3a5;
   border-radius: 10px;
   box-shadow: 2px 2px 2px #888888;
+}
+
+#sidebar2:hover {
+  background-color: #008B91;
+  color: white;
 }
 
 #player1 {
@@ -37,7 +59,7 @@ body {
   border-top-right-radius: 10px;
   padding: 10px;
   text-align: center;
-  color: #00C5CD;
+  color: #7fa3a5;
 }
 
 .score1{
@@ -51,7 +73,7 @@ body {
   border-top-right-radius: 10px;
   padding: 10px;
   text-align: center;
-  color: #00C5CD;
+  color: #7fa3a5;
 }
 
 .score2{
@@ -61,14 +83,22 @@ body {
 
 #heading {
   text-align: center;
-  background-color: #FFB14C;
+  background-color: #7fa3a5;
   padding: .5em;
   margin: 0 auto;
 }
 
+img {
+  max-height: 50px;
+}
+
+img:hover {
+  img: url("images/jeopardy_logo2");
+}
+
 #container {
   border-radius: 10px;
-  background-color: #00C5CD;
+  background-color: #7fa3a5;
   width: 740px;
   margin-left: 10px;
   float: left;
@@ -80,7 +110,7 @@ body {
 button {
     background-color: white;
     border: none;
-    color: #00C5CD;
+    color: #7fa3a5;
     cursor: pointer;
     padding: 10px 32px;
     text-align: center;
@@ -90,7 +120,7 @@ button {
 }
 
 button:hover {
-  background-color: #008B91;
+  background-color: #7F8C8D;
   color: white;
 }
 
@@ -100,7 +130,7 @@ button:hover {
   background: white;
   padding 10px;
   border-radius: 10px;
-  color: #00C5CD;
+  color: #7fa3a5;
 }
 
 .wrapper > div{
@@ -143,5 +173,5 @@ button:hover {
 }
 
 #radio-demo input[type="radio"]:checked + label:before {
-  background: #00C5CD;
+  background: #7fa3a5;
 }

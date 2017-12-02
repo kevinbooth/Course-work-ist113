@@ -26,7 +26,7 @@ function JeopardyApp() {
      url: "http://jservice.io/api/random",
      dataType: "json"
      })
-     .done(function(wrong1) { appendData(wrong1); })
+     .done(function(wrong1) {})
      .fail(function(jqXHR, textStatus, errorThrown) {
            showError(errorThrown);
      });
@@ -36,7 +36,7 @@ function JeopardyApp() {
     url: "http://jservice.io/api/random",
     dataType: "json"
     })
-    .done(function(wrong2) { appendData(wrong2); })
+    .done(function(wrong2) {})
     .fail(function(jqXHR, textStatus, errorThrown) {
           showError(errorThrown);
     });
@@ -48,8 +48,9 @@ function JeopardyApp() {
       $(".diffi").text(data[0].value);
       $("#question").text(data[0].question);
       //randomly placing answer in HTML
-      var randomIndex = Math.floor(Math.random() * 3);
-      
+      var randomIndex = (Math.floor(Math.random() * 3)) + 1;
+      console.log(randomIndex)
+      $('#' + randomIndex ).text(data[0].answer);
 
       $("#answer").text(data[0].answer).hide();
   }
