@@ -3,7 +3,9 @@
 function JeopardyApp() {
 
   function nextGame() {
-    var gameCount = gameCount + 1;
+    var count = parseInt($(".count").text());
+    count = count + 1;
+    $(".count").text(count);
 
   }
   function getData() {
@@ -18,31 +20,11 @@ function JeopardyApp() {
     .fail(function(jqXHR, textStatus, errorThrown) {
 					showError(errorThrown);
     });
-
-    $.ajax({
-     type: "GET",
-     url: "http://jservice.io/api/random",
-     dataType: "json"
-   })
-   .done(function(data) { appendData(wrong1); })
-   .fail(function(jqXHR, textStatus, errorThrown) {
-         showError(errorThrown);
-   });
-
-   $.ajax({
-    type: "GET",
-    url: "http://jservice.io/api/random",
-    dataType: "json"
-  })
-  .done(function(data) { appendData(wrong2); })
-  .fail(function(jqXHR, textStatus, errorThrown) {
-       showError(errorThrown);
-  });
   }
 
   function appendData(data) {
-      $("#title").text(data[0].category.title);
-      $("#diff").text(data[0].value);
+      $(".titles").text(data[0].category.title);
+      $(".diffi").text(data[0].value);
       $("#question").text(data[0].question);
       $("#answer").text(data[0].answer).hide();
   }
@@ -65,7 +47,13 @@ function JeopardyApp() {
     appendFooter("Jeopardy Game Version 1.3");
     //making ajax call
     $("#getquest").click(function() {
-    getData();
+      var count = parseInt($(".count").text());
+    if (count == 10) {
+      $(".winnerout").text("Someone wins");
+    } else {
+      getData();
+      nextGame();
+    }
     $("#input").val("");
     });
     //on click show answer etc..
