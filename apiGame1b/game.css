@@ -14,14 +14,14 @@ body {
 }
 
 #sidebar1 {
-  height: 300px;
+  height: 250px;
   width: 200px;
   background-color: #00C5CD;
   border-radius: 10px;
 }
 
 #sidebar2 {
-  height: 300px;
+  height: 250px;
   width: 200px;
   margin-top: 10px;
   background-color: #00C5CD;
