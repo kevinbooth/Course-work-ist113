@@ -104,6 +104,16 @@ img {
   box-shadow: 2px 2px 2px #888888;
 }
 
+.inline {
+  float: left;
+  margin-left: 133px;
+}
+
+.inline2 {
+  float: left;
+  margin: 0 auto;
+}
+
 button {
     background-color: white;
     border: none;
@@ -163,12 +173,16 @@ button:hover {
   height: 16px;
   width: 16px;
   background: white;
-  border: 2px solid white;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 8px;
-  -o-border-radius: 8px;
+  border: 4px solid white;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 #radio-demo input[type="radio"]:checked + label:before {
   background: #7fa3a5;
+}
+
+.ans {
+  font-weight: bold;
 }

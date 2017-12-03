@@ -2,8 +2,56 @@
 
 function JeopardyApp() {
 
-  function validateLength() {
+  function playSong() {
+    var obj = document.createElement("audio");
+    obj.src="themesong.mp3";
+    obj.volume=0.10;
+    obj.autoPlay=false;
+    obj.preLoad=true;
 
+    obj.play();
+  }
+
+  function resetNextQuestion() {
+    //resetting fields, disabling submit button
+    $("#submit").prop('disabled', false);
+    $("label").text("");
+    $("input").attr(':checked', false);
+    $("#getquest").prop('disabled', true);
+  }
+
+  function resetNextGame() {
+    validateWinner();
+
+    $(".scount1").text("0");
+    $(".scount2").text("0");
+    $(".count").text("0");
+    $(".titles").text("");
+    $(".diffi").text("");
+    $("#question").text("");
+    $("#answer").text("");
+    $("#submit").prop('disabled', false);
+    $("label").text("");
+    $("input").attr(':checked', false);
+  }
+
+  function validateWinner() {
+    var score1 = parseInt($(".scount1").text());
+    var score2 = parseInt($(".scount2").text());
+
+    if (score1 > score2) {
+      alert("Player 1 wins");
+      var count1 = parseInt($(".gcount1").text()) + 1;
+      $(".gcount1").text(count);
+    } else if (score1 < score2) {
+      alert("Player 2 Wins");
+      var count2 = parseInt($(".gcount2").text()) + 1;
+      $(".gcount2").text(count2);
+    } else if (score1 == score2) {
+      alert("Tie!");
+    } else {
+      alert("Error");
+    }
   }
 
   function nextGame() {
@@ -52,7 +100,6 @@ function JeopardyApp() {
       $("#question").text(data[0].question);
       //randomly placing answer in HTML
       var randomIndex = (Math.floor(Math.random() * 3)) + 1;
-      console.log(randomIndex)
       $('#' + randomIndex ).text(data[0].answer);
 
       $("#answer").text(data[0].answer).hide();
@@ -84,17 +131,50 @@ function JeopardyApp() {
     $("footer").text(message)
   }
 
-  function validateAnswer(number) {
-    if (number = 1) {
-      var count = parseInt($("#score").text());
-      count = count + 1;
-      $("#score").text(count);
+  function validateAnswer() {
+    var value = parseInt($(".count").text());
+    var count1 = parseInt($(".scount1").text());
+    var count2 = parseInt($(".scount2").text())
+
+    if ($('.rad').is(':checked')) {
+      if ($("#first-choice").is(':checked') && $("#1").text() == $("#answer").text()) {
+        $("#answer").text("CORRECT! The answer is " + $("#answer").text());
+        if ( value % 2 == 0) {
+          count2 = count2 + 1;
+          $(".scount2").text(count2);
+        } else {
+          count1 = count1 + 1;
+          $(".scount1").text(count1);
+        }
+      } else if ($("#second-choice").is(':checked') && $("#2").text() == $("#answer").text()) {
+        $("#answer").text("CORRECT! The answer is " + $("#answer").text());
+        if ( value % 2 == 0) {
+          count2 = count2 + 1;
+          $(".scount2").text(count2);
+        } else {
+          count1 = count1 + 1;
+          $(".scount1").text(count1);
+        }
+      } else if ($("#third-choice").is(':checked') && $("#3").text() == $("#answer").text()) {
+        $("#answer").text("CORRECT! The answer is " + $("#answer").text());
+        if ( value % 2 == 0) {
+          count2 = count2 + 1;
+          $(".scount2").text(count2);
+        } else {
+          count1 = count1 + 1;
+          $(".scount1").text(count1);
+        }
+      }  else {
+        $("#answer").text("INCORRECT! The answer was " + $("#answer").text());
+      }
+    } else {
+      alert("Please choose an answer!");
     }
   }
 
   this.start = function() {
     $("#hidden").hide();
-
+    playSong();
     appendFooter("Jeopardy Game Version 1.3");
     //making ajax call
     $("#getquest").click(function() {
@@ -102,7 +182,7 @@ function JeopardyApp() {
     if (count == 10) {
       $(".winnerout").text("Someone wins");
     } else {
-      $("label").text("");
+      resetNextQuestion();
       chooseTurn();
       getData();
       nextGame();
@@ -111,17 +191,15 @@ function JeopardyApp() {
     });
     //on click show answer etc..
     $("#submit").click(function() {
+      $(this).prop('disabled', true);
+      $("#getquest").prop('disabled', false);
+      validateAnswer();
       $("#answer").show();
       $("#hidden").show();
     });
-    //incrementing the count of score
-    $("#yes").click(function() {
-      validateAnswer(1);
-      $("#hidden").hide();
-    });
-    //hiding bottom area for next question
-    $("#no").click(function() {
-      $("#hidden").hide();
+    $("#newgame").click(function() {
+      resetNextGame();
+      $("#getquest").prop('disabled', false);
     });
   };
 

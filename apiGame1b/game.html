@@ -16,7 +16,7 @@
           </div><br/>
           <div class="score1">
             Score: <div class="scount1">0</div><br/><br/>
-            Games Won: <div class="gcount2">0</div>
+            Games Won: <div class="gcount1">0</div>
           </div>
         </div>
         <div id="sidebar2">
@@ -30,7 +30,12 @@
         </div>
       </div>
       <div id="container">
-        <button id="getquest">Get Question</button><br/></br>
+        <span class="inline">
+          <button id="newgame">New Game</button><br/></br>
+        </span>
+        <span id=:"inline2">
+          <button id="getquest">Get Question</button><br/></br>
+        </span>
         <div class="wrapper">
           <div>
             Question Count:
@@ -47,15 +52,15 @@
         </div>
         <div class="winnerout"></div>
         <strong>Question:</strong><p id="question"></p>
-        <p class="ans"><strong>Answer the question:</strong></p>
+        <p class="ans">Answer the question:</p>
         <form id="radio-demo">
-          <input type="radio" name="radio-group" id="first-choice" value="First Choice" />
+          <input type="radio" name="radio-group" id="first-choice" class="rad" value="First Choice" />
           <label id="1" for="first-choice"></label>
           <br/>
-          <input type="radio" name="radio-group" id="second-choice" value="Second Choice" />
+          <input type="radio" name="radio-group" id="second-choice" class="rad" value="Second Choice" />
           <label id="2" for="second-choice"></label>
           <br/>
-          <input type="radio" name="radio-group" id="third-choice" value="Third Choice" />
+          <input type="radio" name="radio-group" id="third-choice" class="rad" value="Third Choice" />
           <label id="3" for="third-choice"></label>
         </form><br/>
         <button id="submit">Submit</button><br/><br/>
