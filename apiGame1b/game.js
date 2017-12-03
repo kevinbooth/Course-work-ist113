@@ -2,11 +2,14 @@
 
 function JeopardyApp() {
 
+  function validateLength() {
+
+  }
+
   function nextGame() {
     var count = parseInt($(".count").text());
     count = count + 1;
     $(".count").text(count);
-
   }
   function getData() {
     $("#answer").val("");
@@ -26,7 +29,7 @@ function JeopardyApp() {
      url: "http://jservice.io/api/random",
      dataType: "json"
      })
-     .done(function(wrong1) {})
+     .done(function(wrong1) { appendWrongs(wrong1); })
      .fail(function(jqXHR, textStatus, errorThrown) {
            showError(errorThrown);
      });
@@ -36,7 +39,7 @@ function JeopardyApp() {
     url: "http://jservice.io/api/random",
     dataType: "json"
     })
-    .done(function(wrong2) {})
+    .done(function(wrong2) { appendWrongs(wrong2); })
     .fail(function(jqXHR, textStatus, errorThrown) {
           showError(errorThrown);
     });
@@ -56,7 +59,25 @@ function JeopardyApp() {
   }
 
   function appendWrongs(wrong) {
+    //once answer has been appended in random spot,
+    //the wrong answers get appended in the free spots left
+    if ($("#1").text() == "") {
+      $("#1").text(wrong[0].answer);
+    } else if ($("#2").text() == "") {
+      $("#2").text(wrong[0].answer);
+    } else {
+      $("#3").text(wrong[0].answer);
+    }
 
+  }
+
+  function chooseTurn() {
+    var value = parseInt($(".count").text());
+    if ( value % 2 == 0) {
+      $(".ans").text("Player 1, Answer the question: ");
+    } else {
+      $(".ans").text("Player 2, Answer the question: ");
+    }
   }
 
   function appendFooter(message) {
@@ -81,6 +102,8 @@ function JeopardyApp() {
     if (count == 10) {
       $(".winnerout").text("Someone wins");
     } else {
+      $("label").text("");
+      chooseTurn();
       getData();
       nextGame();
     }

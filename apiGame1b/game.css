@@ -35,7 +35,7 @@ body {
 }
 
 #sidebar1:hover {
-  background-color: #008B91;
+  background-color: #7F8C8D;
   color: white;
 }
 
@@ -49,7 +49,7 @@ body {
 }
 
 #sidebar2:hover {
-  background-color: #008B91;
+  background-color: #7F8C8D;
   color: white;
 }
 
@@ -82,7 +82,6 @@ body {
 }
 
 #heading {
-  text-align: center;
   background-color: #7fa3a5;
   padding: .5em;
   margin: 0 auto;
@@ -90,10 +89,8 @@ body {
 
 img {
   max-height: 50px;
-}
-
-img:hover {
-  img: url("images/jeopardy_logo2");
+  display: block;
+  margin: 0 auto;
 }
 
 #container {
