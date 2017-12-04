@@ -220,11 +220,9 @@ button:hover {
 footer {
   border-radius: 10px;
   background-color: #7fa3a5;
-  width: 100%;
+  width: 952px;
   margin-top: 10px;
   margin-bottom: 5px;
-  position: absolute;
-  bottom: 0px;
   float: left;
   padding: .5em;
   text-align: center;

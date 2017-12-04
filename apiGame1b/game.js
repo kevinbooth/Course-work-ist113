@@ -16,7 +16,7 @@ function JeopardyApp() {
     //resetting fields, disabling submit button
     $("#submit").prop('disabled', false);
     $("label").text("");
-    $("input").attr(':checked', false);
+    $("#radio-demo").get(0).reset();
     $("#getquest").prop('disabled', true);
   }
 
@@ -157,6 +157,7 @@ function JeopardyApp() {
       }  else {
         $("#answer").text("INCORRECT! The answer was " + $("#answer").text());
         $("#getquest").prop('disabled', false);
+        $("#submit").prop('disabled', true);
         $("#answer").show();
         $("#hidden").show();
       }
@@ -169,7 +170,7 @@ function JeopardyApp() {
     var count1 = parseInt($(".scount1").text());
     count1 = count1 + 1;
     $(".scount1").text(count1);
-    $(".submit").prop('disabled', true);
+    $("#submit").prop('disabled', true);
     $("#getquest").prop('disabled', false);
     $("#answer").show();
     $("#hidden").show();
@@ -179,13 +180,14 @@ function JeopardyApp() {
     var count2 = parseInt($(".scount2").text());
     count2 = count2 + 1;
     $(".scount2").text(count2);
-    $(".submit").prop('disabled', true);
+    $("#submit").prop('disabled', true);
     $("#getquest").prop('disabled', false);
     $("#answer").show();
     $("#hidden").show();
   }
 
   this.start = function() {
+    $("#radio-demo").hide();
     $("#hidden").hide();
     playSong();
     appendFooter("Jeopardy Game Version 1.3 By Kevin Booth");
@@ -194,6 +196,7 @@ function JeopardyApp() {
       var count = parseInt($(".count").text());
     if (count == 10) {
     } else {
+      $("#radio-demo").show();
       $(".winnerout").text("");
       resetNextQuestion();
       chooseTurn();
