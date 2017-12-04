@@ -9,11 +9,11 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin: 0;
-  
-  background: -webkit-linear-gradient(#cfd6d6 , #a0bbbc); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#cfd6d6, #a0bbbc); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#cfd6d6, #a0bbbc); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#cfd6d6 , #a0bbbc); /* Standard syntax */
+  background-color: #a0bbbc;
+  background: -webkit-linear-gradient(#a0bbbc , #cfd6d6); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#a0bbbc, #cfd6d6); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#a0bbbc, #cfd6d6); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#a0bbbc , #cfd6d6); /* Standard syntax */
   color: white;
 }
 
