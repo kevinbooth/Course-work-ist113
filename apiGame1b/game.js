@@ -99,7 +99,6 @@ function JeopardyApp() {
       var labels = ["#one", "#two", "#three"];
       $(".titles").text(data[0].category.title);
       $(".diffi").text(data[0].value);
-      alert(data[0].question);
       $("#question").text(data[0].question);
       //randomly placing answer in HTML
       var randomIndex = (Math.floor(Math.random() * 3)) + 1;
