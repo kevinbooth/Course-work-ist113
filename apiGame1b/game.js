@@ -103,7 +103,7 @@ function JeopardyApp() {
       //randomly placing answer in HTML
       var randomIndex = (Math.floor(Math.random() * 3)) + 1;
       var ans = data[0].answer;
-      ans.replace(/<i>/, "k");
+      ans.replace(/<i>/, "");
       //when making ajax call, the answer posted back sometimes has format issues,
       //this takes care of the issue
       if (ans.includes("<i>") == true){
