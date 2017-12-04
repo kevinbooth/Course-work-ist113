@@ -41,14 +41,17 @@ function JeopardyApp() {
 
     if (score1 > score2) {
       $(".winnerout").text("*******Player 1 Wins!*******");
+      $("#radio-demo").hide();
       var count1 = parseInt($(".gcount1").text()) + 1;
       $(".gcount1").text(count1);
     } else if (score1 < score2) {
       $(".winnerout").text("*******Player 2 Wins!*******");
+      $("#radio-demo").hide();
       var count2 = parseInt($(".gcount2").text()) + 1;
       $(".gcount2").text(count2);
     } else if (score1 == score2) {
       $(".winnerout").text("It's a TIE!");
+      $("#radio-demo").hide();
     }
   }
 
@@ -98,20 +101,45 @@ function JeopardyApp() {
       $("#question").text(data[0].question);
       //randomly placing answer in HTML
       var randomIndex = (Math.floor(Math.random() * 3)) + 1;
+      var ans = data[0].answer;
+      alert(ans);
+      ans.replace(/<i>/, "k");
+      if (ans.includes("<i>") == true){
+        var newans = ans.replace(/<i>|<\/i>/gi, "");
+        $('#' + randomIndex ).text(newans);
+        $("#answer").text(newans).hide();
+      } else {
       $('#' + randomIndex ).text(data[0].answer);
-
       $("#answer").text(data[0].answer).hide();
+      }
   }
 
   function appendWrongs(wrong) {
     //once answer has been appended in random spot,
     //the wrong answers get appended in the free spots left
+    var ans = wrong[0].answer;
+    alert(ans);
     if ($("#1").text() == "") {
-      $("#1").text(wrong[0].answer);
+      if (ans.includes("<i>") == true){
+          var newans = ans.replace(/<i>|<\/i>/gi, "");
+        $('#1').text(newans);
+      } else {
+      $('#1').text(wrong[0].answer);
+      }
     } else if ($("#2").text() == "") {
-      $("#2").text(wrong[0].answer);
+      if (ans.includes("<i>") == true){
+          var newans = ans.replace(/<i>|<\/i>/gi, "");
+        $('#2').text(newans);
+      } else {
+      $('#2').text(wrong[0].answer);
+      }
     } else {
-      $("#3").text(wrong[0].answer);
+      if (ans.includes("<i>") == true){
+          var newans = ans.replace(/<i>|<\/i>/gi, "");
+        $('#3').text(newans);
+      } else {
+      $('#3').text(wrong[0].answer);
+      }
     }
 
   }
@@ -158,8 +186,8 @@ function JeopardyApp() {
         $("#answer").text("INCORRECT! The answer was " + $("#answer").text());
         $("#getquest").prop('disabled', false);
         $("#submit").prop('disabled', true);
-        $("#answer").show();
-        $("#hidden").show();
+        $("#answer").animate({ height: 'toggle' });
+        $("#hidden").animate({ height: 'toggle' });
       }
     } else {
       alert("Please choose an answer!");
@@ -172,8 +200,8 @@ function JeopardyApp() {
     $(".scount1").text(count1);
     $("#submit").prop('disabled', true);
     $("#getquest").prop('disabled', false);
-    $("#answer").show();
-    $("#hidden").show();
+    $("#answer").animate({ height: 'toggle' });
+    $("#hidden").animate({ height: 'toggle' });
   }
 
   function incrementScore2() {
@@ -182,13 +210,14 @@ function JeopardyApp() {
     $(".scount2").text(count2);
     $("#submit").prop('disabled', true);
     $("#getquest").prop('disabled', false);
-    $("#answer").show();
-    $("#hidden").show();
+    $("#answer").animate({ height: 'toggle' });
+    $("#hidden").animate({ height: 'toggle' });
   }
 
   this.start = function() {
     $("#radio-demo").hide();
     $("#hidden").hide();
+    $("#question").hide();
     playSong();
     appendFooter("Jeopardy Game Version 1.3 By Kevin Booth");
     //making ajax call
@@ -196,12 +225,13 @@ function JeopardyApp() {
       var count = parseInt($(".count").text());
     if (count == 10) {
     } else {
-      $("#radio-demo").show();
       $(".winnerout").text("");
       resetNextQuestion();
       chooseTurn();
       getData();
       nextGame();
+      $("#question").show();
+      $("#radio-demo").show();
     }
     $("#input").val("");
     });
