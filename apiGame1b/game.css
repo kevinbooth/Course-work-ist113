@@ -7,13 +7,13 @@ body {
   font-size: 20px;
   height: 100%;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   margin: 0;
-  background-color: #a0bbbc;
-  background: -webkit-linear-gradient(#a0bbbc , #cfd6d6); /* For Safari 5.1 to 6.0 */
+  background-color: #a0bbbc; #cfd6d6
+  background: -webkit-linear-gradient(top #a0bbbc , bottom #cfd6d6); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#a0bbbc, #cfd6d6); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#a0bbbc, #cfd6d6); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#a0bbbc , #cfd6d6); /* Standard syntax */
+  background-attachment: fixed;
   color: white;
 }
 
