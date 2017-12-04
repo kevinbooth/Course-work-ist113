@@ -21,18 +21,18 @@ function JeopardyApp() {
   }
 
   function resetNextGame() {
-    validateWinner();
+      validateWinner();
+      $(".scount1").text("0");
+      $(".scount2").text("0");
+      $(".count").text("0");
+      $(".titles").text("");
+      $(".diffi").text("");
+      $("#question").text("");
+      $("#answer").text("");
+      $("#submit").prop('disabled', false);
+      $("label").text("");
+      $("input").attr(':checked', false);
 
-    $(".scount1").text("0");
-    $(".scount2").text("0");
-    $(".count").text("0");
-    $(".titles").text("");
-    $(".diffi").text("");
-    $("#question").text("");
-    $("#answer").text("");
-    $("#submit").prop('disabled', false);
-    $("label").text("");
-    $("input").attr(':checked', false);
   }
 
   function validateWinner() {
@@ -40,17 +40,15 @@ function JeopardyApp() {
     var score2 = parseInt($(".scount2").text());
 
     if (score1 > score2) {
-      alert("Player 1 wins");
+      $(".winnerout").text("*******Player 1 Wins!*******");
       var count1 = parseInt($(".gcount1").text()) + 1;
-      $(".gcount1").text(count);
+      $(".gcount1").text(count1);
     } else if (score1 < score2) {
-      alert("Player 2 Wins");
+      $(".winnerout").text("*******Player 2 Wins!*******");
       var count2 = parseInt($(".gcount2").text()) + 1;
       $(".gcount2").text(count2);
     } else if (score1 == score2) {
-      alert("Tie!");
-    } else {
-      alert("Error");
+      $(".winnerout").text("It's a TIE!");
     }
   }
 
@@ -133,55 +131,70 @@ function JeopardyApp() {
 
   function validateAnswer() {
     var value = parseInt($(".count").text());
-    var count1 = parseInt($(".scount1").text());
-    var count2 = parseInt($(".scount2").text())
 
     if ($('.rad').is(':checked')) {
       if ($("#first-choice").is(':checked') && $("#1").text() == $("#answer").text()) {
         $("#answer").text("CORRECT! The answer is " + $("#answer").text());
         if ( value % 2 == 0) {
-          count2 = count2 + 1;
-          $(".scount2").text(count2);
+          incrementScore2();
         } else {
-          count1 = count1 + 1;
-          $(".scount1").text(count1);
+          incrementScore1();
         }
       } else if ($("#second-choice").is(':checked') && $("#2").text() == $("#answer").text()) {
         $("#answer").text("CORRECT! The answer is " + $("#answer").text());
         if ( value % 2 == 0) {
-          count2 = count2 + 1;
-          $(".scount2").text(count2);
+          incrementScore2();
         } else {
-          count1 = count1 + 1;
-          $(".scount1").text(count1);
+          incrementScore1();
         }
       } else if ($("#third-choice").is(':checked') && $("#3").text() == $("#answer").text()) {
         $("#answer").text("CORRECT! The answer is " + $("#answer").text());
         if ( value % 2 == 0) {
-          count2 = count2 + 1;
-          $(".scount2").text(count2);
+          incrementScore2();
         } else {
-          count1 = count1 + 1;
-          $(".scount1").text(count1);
+          incrementScore1();
         }
       }  else {
         $("#answer").text("INCORRECT! The answer was " + $("#answer").text());
+        $("#getquest").prop('disabled', false);
+        $("#answer").show();
+        $("#hidden").show();
       }
     } else {
       alert("Please choose an answer!");
     }
   }
 
+  function incrementScore1() {
+    var count1 = parseInt($(".scount1").text());
+    count1 = count1 + 1;
+    $(".scount1").text(count1);
+    $(".submit").prop('disabled', true);
+    $("#getquest").prop('disabled', false);
+    $("#answer").show();
+    $("#hidden").show();
+  }
+
+  function incrementScore2() {
+    var count2 = parseInt($(".scount2").text());
+    count2 = count2 + 1;
+    $(".scount2").text(count2);
+    $(".submit").prop('disabled', true);
+    $("#getquest").prop('disabled', false);
+    $("#answer").show();
+    $("#hidden").show();
+  }
+
   this.start = function() {
     $("#hidden").hide();
     playSong();
-    appendFooter("Jeopardy Game Version 1.3");
+    appendFooter("Jeopardy Game Version 1.3 By Kevin Booth");
     //making ajax call
     $("#getquest").click(function() {
       var count = parseInt($(".count").text());
     if (count == 10) {
-      $(".winnerout").text("Someone wins");
     } else {
+      $(".winnerout").text("");
       resetNextQuestion();
       chooseTurn();
       getData();
@@ -191,15 +204,16 @@ function JeopardyApp() {
     });
     //on click show answer etc..
     $("#submit").click(function() {
-      $(this).prop('disabled', true);
-      $("#getquest").prop('disabled', false);
       validateAnswer();
-      $("#answer").show();
-      $("#hidden").show();
     });
+    //on click new game button
     $("#newgame").click(function() {
-      resetNextGame();
-      $("#getquest").prop('disabled', false);
+      if (parseInt($(".count").text()) == 10)  {
+        resetNextGame();
+        $("#getquest").prop('disabled', false);
+      } else {
+        alert("You need to finish this game first!");
+      }
     });
   };
 

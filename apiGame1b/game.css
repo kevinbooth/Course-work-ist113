@@ -22,6 +22,29 @@ body {
     margin: 0 auto;
 }
 
+.howto {
+  border-radius: 10px;
+  background-color: #7fa3a5;
+  width: 970px;
+  margin-bottom: 10px;
+  padding-bottom: 7px;
+  text-align: center;
+  box-shadow: 2px 2px 2px #888888;
+}
+
+#head {
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  color: #7fa3a5;
+}
+
+#small {
+  font-size: 16px;
+}
+
 #sidebar {
   float:left;
 }
@@ -83,13 +106,14 @@ body {
 
 #heading {
   background-color: #7fa3a5;
-  padding: .5em;
+  padding: 0;
   margin: 0 auto;
 }
 
-img {
+.logo {
   max-height: 50px;
   display: block;
+  padding: .5em;
   margin: 0 auto;
 }
 
@@ -97,6 +121,7 @@ img {
   border-radius: 10px;
   background-color: #7fa3a5;
   width: 740px;
+  min-height: 490px;
   margin-left: 10px;
   float: left;
   padding: .5em;
@@ -138,6 +163,11 @@ button:hover {
   padding 10px;
   border-radius: 10px;
   color: #7fa3a5;
+}
+
+.winnerout {
+  padding: 5px;
+  color: #feb13d;
 }
 
 .wrapper > div{
@@ -185,4 +215,18 @@ button:hover {
 
 .ans {
   font-weight: bold;
+}
+
+footer {
+  border-radius: 10px;
+  background-color: #7fa3a5;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  position: absolute;
+  bottom: 0px;
+  float: left;
+  padding: .5em;
+  text-align: center;
+  box-shadow: 2px 2px 2px #888888;
 }

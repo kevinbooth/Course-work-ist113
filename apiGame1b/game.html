@@ -7,8 +7,19 @@
     <script src="game.js"></script>
   </head>
   <body>
-    <header id="heading"><img src="img/jeopardy_logo.png" class="logo"></header><br/>
+    <header id="heading">
+      <img src="img/jeopardy_logo.png" class="logo">
+    </header><br/>
     <div id="a">
+      <div class="howto">
+        <div id="head">
+          How To Play
+        </div><br/>
+        <span id="small">1.) Start a new game by clicking the "Get Question" button</span>
+        <p id="small">2.) Read the generated question and select from the multiple choice answers provided</p>
+        <p id="small">3.) Click the "Submit" button and see how you did</p>
+        <p id="small">4.) Repeat until you get to 10 questions, then press the "New Game" button to get the results and start a new game</p>
+      </div>
       <div id="sidebar">
         <div id="sidebar1">
           <div id="player1">
@@ -65,9 +76,8 @@
         </form><br/>
         <button id="submit">Submit</button><br/><br/>
         <strong>The answer is:</strong><p id="answer"></p>
-        <span>Error output:</span>
-        <footer></footer>
       </div>
   </div>
+    <footer></footer>
   </body>
 </html>
