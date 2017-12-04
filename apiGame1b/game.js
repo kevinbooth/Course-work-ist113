@@ -63,6 +63,7 @@ function JeopardyApp() {
   function getData() {
     $("#answer").val("");
     var answer;
+    //making 3 ajax calles, one being the delivered question, the last two used for multiple choice answers
      $.ajax({
       type: "GET",
       url: "http://jservice.io/api/random",
@@ -102,8 +103,9 @@ function JeopardyApp() {
       //randomly placing answer in HTML
       var randomIndex = (Math.floor(Math.random() * 3)) + 1;
       var ans = data[0].answer;
-      alert(ans);
       ans.replace(/<i>/, "k");
+      //when making ajax call, the answer posted back sometimes has format issues,
+      //this takes care of the issue
       if (ans.includes("<i>") == true){
         var newans = ans.replace(/<i>|<\/i>/gi, "");
         $('#' + randomIndex ).text(newans);
@@ -118,7 +120,6 @@ function JeopardyApp() {
     //once answer has been appended in random spot,
     //the wrong answers get appended in the free spots left
     var ans = wrong[0].answer;
-    alert(ans);
     if ($("#1").text() == "") {
       if (ans.includes("<i>") == true){
           var newans = ans.replace(/<i>|<\/i>/gi, "");
@@ -145,6 +146,7 @@ function JeopardyApp() {
   }
 
   function chooseTurn() {
+    //takes modulus of question count to determind player turn
     var value = parseInt($(".count").text());
     if ( value % 2 == 0) {
       $(".ans").text("Player 1, Answer the question: ");
@@ -159,7 +161,7 @@ function JeopardyApp() {
 
   function validateAnswer() {
     var value = parseInt($(".count").text());
-
+    //makes sure a radio button has been checked then determines if the answer was right
     if ($('.rad').is(':checked')) {
       if ($("#first-choice").is(':checked') && $("#1").text() == $("#answer").text()) {
         $("#answer").text("CORRECT! The answer is " + $("#answer").text());
@@ -195,6 +197,7 @@ function JeopardyApp() {
   }
 
   function incrementScore1() {
+    //increments game score
     var count1 = parseInt($(".scount1").text());
     count1 = count1 + 1;
     $(".scount1").text(count1);
@@ -205,6 +208,7 @@ function JeopardyApp() {
   }
 
   function incrementScore2() {
+    //increments game score
     var count2 = parseInt($(".scount2").text());
     count2 = count2 + 1;
     $(".scount2").text(count2);
